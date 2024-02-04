@@ -6,8 +6,8 @@ import toast from "react-hot-toast"
 
 export const CreateNote = () => {
     const router = useRouter()
-    const [title, setTitle] = useState()
-    const [description, setDescription] = useState()
+    const [title, setTitle] = useState("")
+    const [description, setDescription] = useState("")
     const [loading, setLoading] = useState(false)
     const date = new Date();
 
