@@ -4,9 +4,65 @@
 
 @layer base {
   body {
-    @apply max-w-screen-sm mx-auto
+    @apply max-w-screen-sm mx-auto m-0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
-  input, textarea, button {
-    @apply block
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+      monospace;
   }
+  input, textarea {
+    @apply p-4 block w-full rounded-lg focus:outline-none
+  }
+  button {
+    @apply px-2 py-2 rounded-lg disabled:opacity-40 bg-[#f5eb61] hover:bg-slate-900 hover:text-[#f5eb61] hover:font-semibold active:brightness-75
+  }
+}
+
+@layer components{
+  .header {
+    @apply flex items-center justify-between;
+  }
+  .create-button{
+    @apply bg-[#f5eb61] px-2 py-2 rounded-lg text-white disabled:opacity-40 font-semibold 
+  }
+  .dark-mode {
+    @apply bg-[black];
+  }
+  .dark-mode h1 {
+    @apply text-[white];
+  }
+  .container {
+    @apply max-w-[960px] min-h-screen mx-auto px-[15px];
+  }
+  .notes-list {
+    @apply grid gap-4 grid-cols-[repeat(_auto-fill,minmax(250px,1fr)_)] text-slate-900;
+  }
+  
+  .save {
+    @apply bg-[#e1e1e1] px-2.5 py-[5px] rounded-[15px] border-[none] hover:bg-[#ededed] hover:cursor-pointer;
+  }
+  .note {
+    @apply bg-[#faf17b] min-h-[170px] flex flex-col justify-between whitespace-pre-wrap p-4 rounded-[10px];
+  }
+  .note-footer {
+    @apply flex flex-row justify-between;
+  }
+  .delete-icon {
+    @apply cursor-pointer;
+  }
+  .search {
+    @apply flex items-center bg-[rgb(233,233,233)] mb-[1.5em] p-[1px] rounded-lg;
+  }
+  .search input {
+    @apply bg-[rgb(233,233,233)] w-full border-[none];
+  }
+  .search input:focus {
+    outline: none;
+  }
+  
 }
